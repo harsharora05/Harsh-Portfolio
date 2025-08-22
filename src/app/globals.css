@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
 
-
+* {
+  transition: ease;
+  transition-duration: .5s;
+}
 
 @theme {
+  --color-black-800: #1E293B;
   --color-blue-200: #3B82F6;
   --color-purple-200: #6366F1;
   --color-white-200: #F8FAFC;
+  --color-gray-25: #F8FAFC;
   --color-gray-50: #E2E8F0;
   --color-gray-100: #94A3B8;
   --color-gray-400: #64748B;
