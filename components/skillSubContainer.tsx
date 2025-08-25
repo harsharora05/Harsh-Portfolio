@@ -9,7 +9,7 @@ export function SkillSubContainer(props: {
             <h1 className="text-black text-lg font-bold">{props.title}</h1>
         </div>
         <div className="flex flex-wrap gap-3 border-gray-50">
-            {props.skills.map((skill) => <Chip key={skill} value={skill} />)}
+            {props.skills.map((skill) => <Chip type="small" key={skill} value={skill} />)}
         </div>
     </div>
 }

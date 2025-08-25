@@ -3,7 +3,8 @@ import { Status } from "../../components/status";
 import { BackgroundIcon } from "../../icons/bgIcon";
 import { DownloadIcon } from "../../icons/download";
 import { ProjectIcon } from "../../icons/project";
-
+import { WorkIcon } from "../../icons/work";
+import Link from "next/link";
 export default function App() {
   return <div className="flex min-h-[calc(100vh-200px)] items-center justify-center overflow-hidden ">
     <div className="flex w-200 h-100 p-6 ">
@@ -17,7 +18,7 @@ export default function App() {
           Passionate about crafting high-performance web and mobile apps, with a focus on clean, scalable solutions and great user experiences.
         </h2>
         <div className="mt-5 flex gap-3">
-          <Button type="Primary" logo={<ProjectIcon />} text="My Work" />
+          <Link href={'/projects'}><Button type="Primary" logo={<WorkIcon />} text="My Work" /></Link>
           <Button type="Secondary" logo={<DownloadIcon />} text="Resume" />
         </div>
       </div>

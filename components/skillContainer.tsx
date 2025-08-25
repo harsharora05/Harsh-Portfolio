@@ -29,7 +29,7 @@ export function SkillsContainer() {
             skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Nginx", "Vercel"]
         }
     ];
-    return <div className="mt-15 border border-gray-50 bg-gray-25 w-4xl rotate-2 hover:rotate-0  p-5 rounded-2xl">
+    return <div className="mt-12 border border-gray-50 bg-gray-25 w-4xl  p-5 rounded-2xl">
         <div>
             <h1 className="font-bold text-2xl mb-2">Technical Skills</h1>
         </div>
