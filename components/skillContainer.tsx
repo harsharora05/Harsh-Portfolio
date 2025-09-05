@@ -31,7 +31,7 @@ export function SkillsContainer() {
     ];
     return <div className="mt-12 border border-gray-50 bg-gray-25 w-4xl  p-5 rounded-2xl">
         <div>
-            <h1 className="font-bold text-2xl mb-2">Technical Skills</h1>
+            <h1 className="font-bold text-3xl mb-2">Technical Skills</h1>
         </div>
 
         <div className="flex flex-wrap gap-3 justify-center p-2">

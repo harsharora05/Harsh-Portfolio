@@ -82,16 +82,18 @@ export default function Projects() {
             classname: "mt-5 text-gray-200 text-xl",
         }
     ]
+
     return <div className="flex items-center flex-col p-6 mb-26">
         <h1 className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent font-bold text-5xl py-1">My Projects</h1>
         <TypewriterEffectSmooth words={words} className={"text-gray-200 text-2xl"} cursorClassName="h-7" />
         <div className="flex gap-5 mt-5">
             {titles.map((title, index) => <Chip key={index} value={title} type={"large"} style={"hover:cursor-pointer"} />)}
         </div>
-        <div className="flex w-4xl justify-center flex-wrap mt-6 gap-6">
+        <div className="flex w-4xl justify-center flex-wrap mt-6 gap-6 mb-3">
             {projects.map((project, index) => <ProjectCard key={index} image={project.image} tag={project.tag} title={project.title} decription={project.decription} techStack={project.techStack} liveLink={project.liveLink} githubLink={project.githubLink} />)}
-
         </div>
+
+
 
     </div>
 }
