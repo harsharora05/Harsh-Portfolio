@@ -8,6 +8,7 @@ const chipType = new Map<string, string>([
 export function Chip(props: {
     value: string
     type: "small" | "large"
+    secondaryType?: string,
     style?: string
     hover?: boolean
 

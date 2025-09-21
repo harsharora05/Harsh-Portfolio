@@ -10,7 +10,7 @@ export function ProjectCard(props: {
     githubLink: string,
     liveLink: string
 }) {
-    return <div className="rounded-xl w-[280px] border border-gray-50 ">
+    return <div className="rounded-xl w-[300px] border border-gray-50 ">
         <div className="relative">
             <img src={props.image} alt="" className="rounded-t-xl" />
             <Chip value={props.tag} type={"small"} style="absolute top-2 right-2" />

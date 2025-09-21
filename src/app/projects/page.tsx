@@ -1,9 +1,10 @@
-import { Chip } from "../../../components/chip";
+import clsx from "clsx";
 import { TypewriterEffectSmooth } from "../../../components/flipWords";
 import { ProjectCard } from "../../../components/projectCard";
+import { Filters } from "../../../components/filters";
 
 export default function Projects() {
-    const titles = ["All Projects", "Web Apps", "Mobile", "AI"];
+    const categories = ["All Projects", "Web Apps", "Mobile", "AI"];
     const projects = [
         {
             tag: "featured",
@@ -84,16 +85,14 @@ export default function Projects() {
     ]
 
     return <div className="flex items-center flex-col p-6 mb-26">
-        <h1 className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent font-bold text-5xl py-1">My Projects</h1>
-        <TypewriterEffectSmooth words={words} className={"text-gray-200 text-2xl"} cursorClassName="h-7" />
-        <div className="flex gap-5 mt-5">
-            {titles.map((title, index) => <Chip key={index} value={title} type={"large"} style={"hover:cursor-pointer"} />)}
-        </div>
-        <div className="flex w-4xl justify-center flex-wrap mt-6 gap-6 mb-3">
+        <h1 className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent font-bold text-4xl projxsm:text-5xl py-1">My Projects</h1>
+        <TypewriterEffectSmooth words={words} className={"text-gray-200 text-sm projxsm:text-xl projsm:text-2xl "} cursorClassName="h-7" />
+        <Filters categories={categories} />
+        <div className="grid grid-cols-1 projsm:grid-cols-2 projmd:grid-cols-3 justify-center  mt-6 gap-6 mb-3">
             {projects.map((project, index) => <ProjectCard key={index} image={project.image} tag={project.tag} title={project.title} decription={project.decription} techStack={project.techStack} liveLink={project.liveLink} githubLink={project.githubLink} />)}
         </div>
 
 
 
-    </div>
+    </div >
 }

@@ -5,7 +5,7 @@ import { LightIcon } from "../icons/light";
 import { LinkedinIcon } from "../icons/linkedin";
 
 export function TopNavBar() {
-    return <div className="sticky top-0 flex justify-between px-8 py-5">
+    return <div className="sticky top-0 flex justify-between px-8 py-5 z-10">
         <div className="flex gap-4">
             <LinkedinIcon />
             <GithubIcon />

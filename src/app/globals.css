@@ -3,7 +3,7 @@
 
 * {
   transition: ease;
-  transition-duration: .5s;
+  transition-duration: .3s;
 }
 
 @theme {
@@ -16,4 +16,14 @@
   --color-gray-100: #94A3B8;
   --color-gray-400: #64748B;
   --color-gray-200: #64748B;
+  --breakpoint-firstmd: 650px;
+  --breakpoint-firstsm: 450px;
+  --breakpoint-navmd: 550px;
+  --breakpoint-projmd: 1100px;
+  --breakpoint-projsm: 745px;
+  --breakpoint-projxsm: 542px;
+  --breakpoint-abtmd: 940px;
+  --breakpoint-abtsm: 748px;
+  --breakpoint-abtxsm: 458px;
+
 }
