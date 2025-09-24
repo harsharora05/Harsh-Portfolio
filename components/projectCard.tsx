@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 import { Button } from "./button";
 import { Chip } from "./chip";
 
@@ -23,8 +25,8 @@ export function ProjectCard(props: {
             </div>
 
             <div className="flex gap-2 mt-4">
-                <Button type={"Primary"} text={"Live Link"} />
-                <Button type={"Secondary"} text={"GitHub"} />
+                <Link href={props.githubLink} target="_blank"><Button type={"Primary"} text={"GitHub"} /></Link>
+                {props.liveLink && <Link href={props.liveLink} target="_blank"> <Button type={"Secondary"} text={"Live Link"} /> </Link>}
             </div>
 
         </div>

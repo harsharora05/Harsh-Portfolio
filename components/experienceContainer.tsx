@@ -1,6 +1,9 @@
+import { SanityDocument } from "next-sanity"
 import { ExperienceSubContainer } from "./experienceSubContainer"
 
-export function ExperienceContainer() {
+export function ExperienceContainer(props: {
+    experiences: SanityDocument
+}) {
     return <div className="mt-12 border border-gray-50 bg-gray-25 flex flex-col flex-wrap max-w-4xl relative p-5 rounded-2xl mb-20">
         <div>
             <h1 className="font-bold text-3xl mb-2">My Journey</h1>
@@ -9,11 +12,8 @@ export function ExperienceContainer() {
 
         <div className="absolute w-[3px]  bg-gradient-to-r from-blue-200 to-purple-200 top-30 bottom-6  abtxsm:left-15 rounded-xl"></div>
 
-        <ExperienceSubContainer title="Software Engineer (Part-time)" company="Cynos Nexus" duration="2 Months" location="Remote" description="As a Full Stack Developer, I design, develop, and maintain scalable web and mobile applications. My role involves building responsive UIs" />
-        <ExperienceSubContainer title="Software Engineer (Part-time)" company="Cynos Nexus" duration="2 Months" location="Remote" description="As a Full Stack Developer, I design, develop, and maintain scalable web and mobile applications. My role involves building responsive UIs" />
-        <ExperienceSubContainer title="Software Engineer (Part-time)" company="Cynos Nexus" duration="2 Months" location="Remote" description="As a Full Stack Developer, I design, develop, and maintain scalable web and mobile applications. My role involves building responsive UIs" />
-
-
+        {props.experiences.map((exp: SanityDocument) => <ExperienceSubContainer key={exp._id} title={exp.title}
+            company={exp.company} duration={exp.duration} location={exp.location} description={exp.description} />)}
     </div>
 
 }

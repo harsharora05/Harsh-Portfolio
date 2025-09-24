@@ -1,10 +1,21 @@
-import { Button } from "../../components/button";
-import { Status } from "../../components/status";
-import { BackgroundIcon } from "../../icons/bgIcon";
-import { DownloadIcon } from "../../icons/download";
-import { WorkIcon } from "../../icons/work";
+
 import Link from "next/link";
-export default function App() {
+import { Status } from "../../../components/status";
+import { Button } from "../../../components/button";
+import { DownloadIcon } from "../../../icons/download";
+import { WorkIcon } from "../../../icons/work";
+import { BackgroundIcon } from "../../../icons/bgIcon";
+import { client } from "@/sanity/client";
+import { SanityDocument } from "next-sanity";
+
+const RESUME_QUERY = `*[
+_type == "resume"
+]{
+"fileUrl": file.asset->url
+}
+`;
+export default async function App() {
+  const resume = await client.fetch<SanityDocument[]>(RESUME_QUERY);
   return <div className="flex firstmd:min-h-[calc(100vh-200px)] firstmd:items-center firstmd:justify-center firstmd:overflow-hidden mb-25">
     <div className="flex flex-col firstmd:flex-row firstmd:w-200 firstmd:h-100 p-6 ">
       <div className="flex-1 py-5 firstmd:py-0">
@@ -18,7 +29,7 @@ export default function App() {
         </h2>
         <div className="mt-3 firstsm:mt-5 flex gap-3">
           <Link href={'/projects'}><Button type="Primary" logo={<WorkIcon />} text="My Work" /></Link>
-          <Button type="Secondary" logo={<DownloadIcon />} text="Resume" />
+          <Link href={resume[0].fileUrl} target="_blank"><Button type="Secondary" logo={<DownloadIcon />} text="Resume" /></Link>
         </div>
       </div>
       <div className="flex-1 flex items-center justify-center mt-12 mb-12 firstsm:mb-0 firstmd:mt-0 ">

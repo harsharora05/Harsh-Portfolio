@@ -1,5 +1,6 @@
 import React from "react";
-import { LoaderOne } from "../../components/loader";
+import { LoaderOne } from "../../../components/loader";
+
 
 
 export default function Loading() {
