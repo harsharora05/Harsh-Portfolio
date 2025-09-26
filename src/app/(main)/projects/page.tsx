@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { TypewriterEffectSmooth } from "../../../../components/flipWords";
-import { ProjectCard } from "../../../../components/projectCard";
 import { Filters } from "../../../../components/filters";
 import { client } from "@/sanity/lib/client";
 import { SanityDocument } from "next-sanity";
+import { ProjectList } from "../../../../components/projectList";
 
 const PROJECT_QUERY = `*[
   _type == "project"
@@ -14,6 +14,7 @@ const PROJECT_QUERY = `*[
   description,
   techStack,
   liveLink,
+  projectType,
   githubLink,
   image{
     asset->{
@@ -62,9 +63,7 @@ export default async function Projects() {
         <h1 className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent font-bold text-4xl projxsm:text-5xl py-1">My Projects</h1>
         <TypewriterEffectSmooth words={words} className={"text-gray-200 text-sm projxsm:text-xl projsm:text-2xl "} cursorClassName="h-7" />
         <Filters categories={categories} />
-        <div className="grid grid-cols-1 projsm:grid-cols-2 projmd:grid-cols-3 justify-center  mt-6 gap-6 mb-3">
-            {projects.map((project, index) => <ProjectCard key={project._id} image={project.image.asset.url} tag={project.tag} title={project.title} decription={project.description} techStack={project.techStack} liveLink={project.liveLink} githubLink={project.githubLink} />)}
-        </div>
+        <ProjectList projects={projects} />
 
 
 
