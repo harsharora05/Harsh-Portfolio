@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-
+/* Smooth transitions */
 * {
-  transition: ease;
-  transition-duration: .3s;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Light mode (default) */
 @theme {
   --color-black-800: #1E293B;
   --color-blue-200: #3B82F6;
@@ -14,8 +14,9 @@
   --color-gray-25: #F8FAFC;
   --color-gray-50: #E2E8F0;
   --color-gray-100: #94A3B8;
-  --color-gray-400: #64748B;
   --color-gray-200: #64748B;
+  --color-gray-400: #64748B;
+
   --breakpoint-firstmd: 650px;
   --breakpoint-firstsm: 450px;
   --breakpoint-navmd: 550px;
@@ -25,5 +26,21 @@
   --breakpoint-abtmd: 940px;
   --breakpoint-abtsm: 748px;
   --breakpoint-abtxsm: 458px;
+}
 
+/* Dark mode overrides */
+.dark {
+  --color-black-800: #F8FAFC;
+  /* inverted */
+  --color-blue-200: #1E40AF;
+  /* darker blue */
+  --color-purple-200: #581C87;
+  /* darker purple */
+  --color-white-200: #1E293B;
+  /* dark bg */
+  --color-gray-25: #475569;
+  --color-gray-50: #4d596b;
+  --color-gray-100: #CBD5E1;
+  --color-gray-200: #bcc0c5;
+  --color-gray-400: #acb0b6;
 }

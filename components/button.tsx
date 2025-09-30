@@ -1,12 +1,11 @@
 "use client";
 import clsx from "clsx";
-import { button, map } from "motion/react-client"
 import { ReactElement } from "react"
 
 
-let BtnStyle = new Map<string, string>([
-    ["Primary", "bg-blue-200 text-white "],
-    ["Secondary", "bg-white text-black-600 border border-gray-50"]
+const BtnStyle = new Map<string, string>([
+    ["Primary", "bg-blue-200 text-white"],
+    ["Secondary", "border border-gray-50 bg-white-200 text-gray-400"]
 ])
 
 export function Button(props: {

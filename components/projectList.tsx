@@ -1,5 +1,4 @@
 "use client";
-import Projects from "@/app/(main)/projects/page";
 import useProjectStore from "@/state/projectFilterState";
 import { SanityDocument } from "next-sanity";
 import { useEffect } from "react";
@@ -17,7 +16,7 @@ export function ProjectList(props: {
         setProjects(props.projects);
     }, [props.projects, setProjects]);
     return filteredProjects.length ? <div className="grid grid-cols-1 projsm:grid-cols-2 projmd:grid-cols-3 justify-center  mt-6 gap-6 mb-3">
-        {filteredProjects.map((project, index) => <ProjectCard key={project._id} image={project.image.asset.url} tag={project.tag} title={project.title} decription={project.description} techStack={project.techStack} liveLink={project.liveLink} githubLink={project.githubLink} />)}
+        {filteredProjects.map((project) => <ProjectCard key={project._id} image={project.image.asset.url} tag={project.tag} title={project.title} decription={project.description} techStack={project.techStack} liveLink={project.liveLink} githubLink={project.githubLink} />)}
     </div> : <div className="flex items-center justify-center w-full h-64 mt-6">
         <ComingSoon />
     </div>

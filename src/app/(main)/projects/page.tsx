@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { TypewriterEffectSmooth } from "../../../../components/flipWords";
 import { Filters } from "../../../../components/filters";
 import { client } from "@/sanity/lib/client";

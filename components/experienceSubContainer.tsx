@@ -7,7 +7,7 @@ export function ExperienceSubContainer(props: {
     location: string,
     description: string
 }) {
-    return <div className="max-w-4xl bg-white ml-10 abtxsm:ml-20 mt-10 px-6 py-4 shadow-sm shadow-gray-100 border border-gray-50 hover:border-blue-200   rounded-xl flex flex-col gap-4">
+    return <div className="max-w-4xl bg-white ml-10 abtxsm:ml-20 mt-10 px-6 py-4 shadow-sm shadow-gray-100 border border-gray-50 hover:border-blue-200 bg-white-200  rounded-xl flex flex-col gap-4">
 
 
         <div className="absolute left-[10px] abtxsm:left-[49.5px] flex items-center justify-center">

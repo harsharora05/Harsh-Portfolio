@@ -1,5 +1,4 @@
 import { SanityDocument } from "next-sanity";
-import { ProjectIcon } from "../icons/project";
 
 export function CurrentRoleBox(props: {
     currentRole: SanityDocument

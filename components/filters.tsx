@@ -2,7 +2,7 @@
 import { useMediaQuery } from "react-responsive"
 import { Chip } from "./chip"
 import { SanityDocument } from "next-sanity";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useProjectStore from "@/state/projectFilterState";
 
 

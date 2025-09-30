@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Button } from "./button";
 import { Chip } from "./chip";
+import Image from "next/image";
 
 export function ProjectCard(props: {
     tag: string,
@@ -14,14 +15,14 @@ export function ProjectCard(props: {
 }) {
     return <div className="rounded-xl w-[300px] border border-gray-50 ">
         <div className="relative">
-            <img src={props.image} alt="" className="rounded-t-xl" />
+            <Image src={props.image} alt="" className="rounded-t-xl" />
             <Chip value={props.tag} type={"small"} style="absolute top-2 right-2" />
         </div>
         <div className="p-4">
             <h1 className="text-lg font-bold">{props.title}</h1>
             <p className="text-sm text-gray-100">{props.decription}</p>
             <div className="flex gap-1 flex-wrap mt-3">
-                {props.techStack.map((tech: any, index: any) => <Chip key={index} value={tech} type={"small"} />)}
+                {props.techStack.map((tech, index) => <Chip key={index} value={tech} type={"small"} />)}
             </div>
 
             <div className="flex gap-2 mt-4">

@@ -6,6 +6,7 @@ import { WorkIcon } from "../../../icons/work";
 import { BackgroundIcon } from "../../../icons/bgIcon";
 import { client } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
+import Image from "next/image";
 
 const RESUME_QUERY = `*[
 _type == "resume"
@@ -15,11 +16,11 @@ _type == "resume"
 `;
 export default async function App() {
   const resume = await client.fetch<SanityDocument[]>(RESUME_QUERY);
-  return <div className="flex firstmd:min-h-[calc(100vh-200px)] firstmd:items-center firstmd:justify-center firstmd:overflow-hidden mb-25">
+  return <div className="flex firstmd:min-h-[calc(100vh-200px)] firstmd:items-center firstmd:justify-center firstmd:overflow-hidden mb-25 ">
     <div className="flex flex-col firstmd:flex-row firstmd:w-200 firstmd:h-100 p-6 ">
-      <div className="flex-1 py-5 firstmd:py-0">
+      <div className="flex-1 py-5 firstmd:py-0 ">
         <Status />
-        <h1 className="font-bold text-4xl firstsm:text-5xl bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mt-5">Hi, I'm Harsh Arora </h1>
+        <h1 className="font-bold text-4xl firstsm:text-5xl bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mt-5 ">Hi, I&apos;m Harsh Arora </h1>
         <h4 className="mt-3 text-gray-400 text-xl">
           Full-Stack & Flutter Developer
         </h4>
@@ -33,7 +34,7 @@ export default async function App() {
       </div>
       <div className="flex-1 flex items-center justify-center mt-12 mb-12 firstsm:mb-0 firstmd:mt-0 ">
         <BackgroundIcon />
-        <img className="h-40 z-10" src="harsh.png" alt="" />
+        <Image className="h-40 z-10" src="harsh.png" alt="" />
       </div>
     </div>
   </div>
