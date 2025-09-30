@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Harsh Arora",
   description: "Designed & Devloped by Harsh Arora",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

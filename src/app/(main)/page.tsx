@@ -15,7 +15,9 @@ _type == "resume"
 }
 `;
 export default async function App() {
-  const resume = await client.fetch<SanityDocument[]>(RESUME_QUERY);
+  const resume = await client.fetch<SanityDocument[]>(RESUME_QUERY, {}, {
+    next: { revalidate: 10800 }
+  });
   return <div className="flex firstmd:min-h-[calc(100vh-200px)] firstmd:items-center firstmd:justify-center firstmd:overflow-hidden mb-25 ">
     <div className="flex flex-col firstmd:flex-row firstmd:w-200 firstmd:h-100 p-6 ">
       <div className="flex-1 py-5 firstmd:py-0 ">
@@ -34,7 +36,7 @@ export default async function App() {
       </div>
       <div className="flex-1 flex items-center justify-center mt-12 mb-12 firstsm:mb-0 firstmd:mt-0 ">
         <BackgroundIcon />
-        <Image className="h-40 z-10" src="harsh.png" alt="" />
+        <Image className="h-40 z-10" width={190} height={160} src="/harsh.png" alt="" />
       </div>
     </div>
   </div>

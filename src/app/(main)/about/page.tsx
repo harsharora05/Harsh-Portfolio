@@ -15,8 +15,12 @@ _type == "skillCategory"
 ]`;
 
 export default async function About() {
-    const experiences = await client.fetch<SanityDocument>(EXPERIENCE_QUERY);
-    const skillCategories = await client.fetch<SanityDocument>(SKILL_QUERY);
+    const experiences = await client.fetch<SanityDocument>(EXPERIENCE_QUERY, {}, {
+        next: { revalidate: 10800 }
+    });
+    const skillCategories = await client.fetch<SanityDocument>(SKILL_QUERY, {}, {
+        next: { revalidate: 10800 }
+    });
     const currentRole = experiences[0];
 
 

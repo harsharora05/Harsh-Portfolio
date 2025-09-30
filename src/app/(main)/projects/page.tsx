@@ -28,8 +28,12 @@ _type == "projectCategory"]{
 Category
 }`;
 export default async function Projects() {
-    const categories = await client.fetch<SanityDocument[]>(PROJECT_CATEGORIES_QUERY);
-    const projects = await client.fetch<SanityDocument[]>(PROJECT_QUERY);
+    const categories = await client.fetch<SanityDocument[]>(PROJECT_CATEGORIES_QUERY, {}, {
+        next: { revalidate: 10800 }
+    });
+    const projects = await client.fetch<SanityDocument[]>(PROJECT_QUERY, {}, {
+        next: { revalidate: 10800 }
+    });
 
     const words = [
         {
