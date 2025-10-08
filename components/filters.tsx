@@ -10,7 +10,7 @@ import useProjectStore from "@/state/projectFilterState";
 export function Filters(props: {
     categories: SanityDocument[]
 }) {
-    const isMobileView = useMediaQuery({ maxWidth: 542 });
+    const isMobileView = useMediaQuery({ maxWidth: 563 });
     const [category, setCategory] = useState("All Projects");
     const filter = useProjectStore((state) => state.filter);
 
@@ -19,6 +19,6 @@ export function Filters(props: {
     }, [category, filter]);
 
     return <div className="flex gap-3 projxsm:gap-5 mt-5">
-        {props.categories.map((cat, index) => <Chip key={index} value={cat.Category} isSelected={cat.Category == category ? true : false} setCategory={setCategory} type={isMobileView ? "small" : "large"} secondaryType="small" style={"hover:cursor-pointer"} />)}
+        {props.categories.map((cat, index) => <Chip key={index} value={cat.Category} isSelected={cat.Category == category ? true : false} setCategory={setCategory} type={isMobileView ? "small" : "large"} style={"hover:cursor-pointer"} />)}
     </div>
 }

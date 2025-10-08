@@ -3,14 +3,13 @@ import clsx from "clsx"
 import { Dispatch, SetStateAction } from "react";
 
 const chipType = new Map<string, string>([
-    ["small", "text-sm px-2 py-1"],
+    ["small", "text-xs chipxsm:text-sm px-2  py-1"],
     ["large", "text-lg px-4 py-2"],
 ])
 
 export function Chip(props: {
     value: string
-    type: "small" | "large"
-    secondaryType?: string,
+    type: "small" | "large",
     style?: string
     hover?: boolean
     setCategory?: Dispatch<SetStateAction<string>>
