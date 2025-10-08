@@ -15,7 +15,7 @@ export function ProjectCard(props: {
 }) {
     return <div className="rounded-xl w-[300px] border border-gray-50 ">
         <div className="relative">
-            <Image src={props.image} width={400} height={180} alt="" className="rounded-t-xl" />
+            <Image src={props.image} width={400} height={180} alt="" className="rounded-t-xl h-50" />
             <Chip value={props.tag} type={"small"} style="absolute top-2 right-2" />
         </div>
         <div className="p-4">
