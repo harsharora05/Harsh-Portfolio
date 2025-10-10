@@ -25,11 +25,11 @@ jobs:
         uses: reviewdog/action-eslint@v1
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            reporter: github-pr-review  # shows comments in PRs
-            eslint_flags: 'src --ext .js,.jsx,.ts,.tsx'
+            reporter: github-pr-review 
+            eslint_flags: 'src/'
 
       - name: Typecheck
-        uses: andoshin11/typescript-error-reporter-action@v1.0.2
+        run: npx tsc --noEmit
     
       - name : Build Check
         run : npm run build
