@@ -1,15 +1,39 @@
-name : Quality Checks
-on : 
-    push:
-        branches: [main]
+name: Quality Checks
 
-jobs :
-    build :
-        runs-on :  ubuntu-latest
-        steps :
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-        - run: npm run lint
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Run Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloning Repo
+        uses: actions/checkout@v4
+
+      - name: Node.js Setup
+        uses: actions/setup-node@v4
+        with:
+            node-version: 23
+
+      - name: global install
+        run: npm install
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v8.2.0
+
+      - name: Typecheck
+        uses: andoshin11/typescript-error-reporter-action@v1.0.2
+    
+      - name : Build Check
+        run : npm run build
+     
+      - name: check for vulnerabilities
+        run: npm audit
         
+        
+
 
 
