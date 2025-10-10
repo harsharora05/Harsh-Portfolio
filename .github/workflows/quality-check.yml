@@ -21,10 +21,12 @@ jobs:
       - name: global install
         run: npm install
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v8.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run ESLint
+        uses: reviewdog/action-eslint@v1
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            reporter: github-pr-review  # shows comments in PRs
+            eslint_flags: 'src --ext .js,.jsx,.ts,.tsx'
 
       - name: Typecheck
         uses: andoshin11/typescript-error-reporter-action@v1.0.2
