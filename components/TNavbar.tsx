@@ -11,7 +11,7 @@ export function TopNavBar() {
             <Link href={"https://www.linkedin.com/in/harsh17052"} target="_blank"><LinkedinIcon /></Link>
             <Link href={"https://x.com/aroraharsh17"} target="_blank"><TwitterIcon /></Link>
             <Link href={"https://github.com/harsharora05"} target="_blank"><GithubIcon /></Link>
-            <Link href={"mailto:harsh.official995@gmail.com"} target="_blank"><EmailIcon /></Link>
+            <Link href={"mailto:hararora12@gmail.com"} target="_blank"><EmailIcon /></Link>
         </div>
 
         <ThemeIcons />
