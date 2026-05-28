@@ -24,7 +24,7 @@ export default async function App() {
         <Status />
         <h1 className="font-bold text-4xl firstsm:text-5xl bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mt-5 ">Hi, I&apos;m Harsh Arora </h1>
         <h4 className="mt-3 text-gray-400 text-xl">
-          Full-Stack & Flutter Developer
+          Full-Stack Developer
         </h4>
         <h2 className="mt-3 text-gray-100 text-md">
           Passionate about crafting high-performance web and mobile apps, with a focus on clean, scalable solutions and great user experiences.
